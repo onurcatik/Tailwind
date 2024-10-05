@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Border - Tailwind</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/index.html"><strong aria-hidden="true">1.</strong> Tailwind Introduction & Styling with Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/01_introduction-to-utility-first-css.html"><strong aria-hidden="true">1.1.</strong> Introduction to Utility-First CSS and the Benefits of Using Tailwind CSS</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/03_how-to-set-up-a-project-with-tailwind-css.html"><strong aria-hidden="true">1.2.</strong> How to Set Up a Project with Tailwind CSS</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/04_font-size.html"><strong aria-hidden="true">1.3.</strong> Font Size</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/05_font-weight.html"><strong aria-hidden="true">1.4.</strong> Font Weight</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/06_text-alignment.html"><strong aria-hidden="true">1.5.</strong> Text Alignment</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/07_text-color-text-opacity-hover-color.html"><strong aria-hidden="true">1.6.</strong> Text Color, Text Opacity & Hover Color</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/08_background-color.html"><strong aria-hidden="true">1.7.</strong> Background Color</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/09_assignment.html"><strong aria-hidden="true">1.8.</strong> Assignment</a></li></ol></li><li class="chapter-item expanded "><a href="../02_spacing/index.html"><strong aria-hidden="true">2.</strong> Spacing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02_spacing/01_margin-padding.html"><strong aria-hidden="true">2.1.</strong> Margin & Padding</a></li><li class="chapter-item expanded "><a href="../02_spacing/02_text-decoration.html"><strong aria-hidden="true">2.2.</strong> Text Decoration</a></li><li class="chapter-item expanded "><a href="../02_spacing/03_text-transformation.html"><strong aria-hidden="true">2.3.</strong> Text Transformation</a></li><li class="chapter-item expanded "><a href="../02_spacing/04_width-and-height.html"><strong aria-hidden="true">2.4.</strong> Width and Height</a></li><li class="chapter-item expanded "><a href="../02_spacing/05_border.html" class="active"><strong aria-hidden="true">2.5.</strong> Border</a></li><li class="chapter-item expanded "><a href="../02_spacing/06_custom-color.html"><strong aria-hidden="true">2.6.</strong> Custom Color</a></li><li class="chapter-item expanded "><a href="../02_spacing/07_custom-margin.html"><strong aria-hidden="true">2.7.</strong> Custom Margin</a></li><li class="chapter-item expanded "><a href="../02_spacing/08_assignment.html"><strong aria-hidden="true">2.8.</strong> Assignment</a></li></ol></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/index.html"><strong aria-hidden="true">3.</strong> Web Design with Tailwind CSS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/01_container-utility.html"><strong aria-hidden="true">3.1.</strong> Container Utility</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/02_box-sizing-utility.html"><strong aria-hidden="true">3.2.</strong> Box-Sizing Utility</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/03_display-utility.html"><strong aria-hidden="true">3.3.</strong> Display Utility</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/04_float-utility.html"><strong aria-hidden="true">3.4.</strong> Float Utility</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/05_object-fit-utility.html"><strong aria-hidden="true">3.5.</strong> Object-Fit Utility</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/06_shadow-and-opacity-utilities.html"><strong aria-hidden="true">3.6.</strong> Shadow and Opacity Utilities</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/07_hover-and-focus-effects.html"><strong aria-hidden="true">3.7.</strong> Hover and Focus Effects</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/08_how-to-use-icon-in-tailwind-css.html"><strong aria-hidden="true">3.8.</strong> How to Use Icons in Tailwind CSS</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/09_assignment.html"><strong aria-hidden="true">3.9.</strong> Assignment</a></li></ol></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/index.html"><strong aria-hidden="true">4.</strong> Flex & Grid</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04_flex-and-grid/01_cursor-styles-and-pointer-events.html"><strong aria-hidden="true">4.1.</strong> Cursor Styles and Pointer Events</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/02_visibility.html"><strong aria-hidden="true">4.2.</strong> Visibility</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/03_gradient-backgrounds-and-linear-gradients.html"><strong aria-hidden="true">4.3.</strong> Gradient Backgrounds and Linear Gradients</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/04_forms-and-inputs.html"><strong aria-hidden="true">4.4.</strong> Forms and Inputs</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/05_flexbox.html"><strong aria-hidden="true">4.5.</strong> Flexbox</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/06_grid-layouts.html"><strong aria-hidden="true">4.6.</strong> Grid Layouts</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/07_pagination-and-breadcrumbs.html"><strong aria-hidden="true">4.7.</strong> Pagination and Breadcrumbs</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/08_assignment.html"><strong aria-hidden="true">4.8.</strong> Assignment</a></li></ol></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/index.html"><strong aria-hidden="true">5.</strong> Responsive Classes and Modal</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/01_concept-of-components.html"><strong aria-hidden="true">5.1.</strong> Concept of Components</a></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/02_reusable-components-using-apply-and-custom-css-classes.html"><strong aria-hidden="true">5.2.</strong> Reusable Components Using @apply and Custom CSS Classes</a></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/03_breakpoints-and-media-queries.html"><strong aria-hidden="true">5.3.</strong> Breakpoints and Media Queries</a></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/04_responsive-classes-and-utilities.html"><strong aria-hidden="true">5.4.</strong> Responsive Classes and Utilities</a></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/05_mobile-first-design-approach.html"><strong aria-hidden="true">5.5.</strong> Mobile-First Design Approach</a></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/06_modal-components-and-modal-triggers.html"><strong aria-hidden="true">5.6.</strong> Modal Components and Modal Triggers</a></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/07_assignment.html"><strong aria-hidden="true">5.7.</strong> Assignment</a></li></ol></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/index.html"><strong aria-hidden="true">6.</strong> Configuration, Functions & Directives</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/01_theming-and-dark-mode.html"><strong aria-hidden="true">6.1.</strong> Theming and Dark Mode</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/02_customizing-tailwind-css-configuration.html"><strong aria-hidden="true">6.2.</strong> Customizing Tailwind CSS Configuration</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/03_tailwind-css-plugins.html"><strong aria-hidden="true">6.3.</strong> Tailwind CSS Plugins</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/04_popular-tailwind-css-plugins.html"><strong aria-hidden="true">6.4.</strong> Popular Tailwind CSS Plugins</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/05_functions-directives.html"><strong aria-hidden="true">6.5.</strong> Functions & Directives</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/06_integration-framework.html"><strong aria-hidden="true">6.6.</strong> Integrating Tailwind CSS with Component Frameworks</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/07_optimizing-production.html"><strong aria-hidden="true">6.7.</strong> Optimizing Tailwind CSS for Production</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/08_assignment.html"><strong aria-hidden="true">6.8.</strong> Assignment</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Tailwind</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="border-utilities-in-tailwind-css"><a class="header" href="#border-utilities-in-tailwind-css">Border Utilities in Tailwind CSS</a></h1>
+<p>Borders play an essential role in web design, helping to define areas, create separation between elements, and add emphasis to certain sections of a layout. With Tailwind CSS, managing borders is simple and flexible, thanks to its comprehensive set of utilities for controlling border width, color, style, and radius (rounded corners). This chapter will guide you through using these utilities effectively to enhance your design.</p>
+<hr />
+<h2 id="1-introduction-to-border-utilities"><a class="header" href="#1-introduction-to-border-utilities">1. Introduction to Border Utilities</a></h2>
+<p>Tailwind CSS provides a set of utility classes to control the appearance and behavior of borders. You can specify the <strong>width</strong>, <strong>color</strong>, <strong>style</strong>, and <strong>radius</strong> of borders, giving you precise control over how borders are applied to elements in your design.</p>
+<ul>
+<li><strong>Border Width</strong>: Controls the thickness of the border.</li>
+<li><strong>Border Color</strong>: Sets the color of the border.</li>
+<li><strong>Border Radius</strong>: Rounds the corners of the element's border.</li>
+<li><strong>Border Style</strong>: Defines the style of the border (solid, dashed, dotted, etc.).</li>
+</ul>
+<hr />
+<h2 id="2-border-width"><a class="header" href="#2-border-width">2. Border Width</a></h2>
+<p>The <code>border</code> utility in Tailwind CSS allows you to control the thickness of an element’s border. By default, you can apply a uniform border or target specific sides using the <code>border-t</code> (top), <code>border-b</code> (bottom), <code>border-l</code> (left), and <code>border-r</code> (right) utilities.</p>
+<h3 id="common-border-width-utilities"><a class="header" href="#common-border-width-utilities">Common Border Width Utilities:</a></h3>
+<ul>
+<li><code>border</code>: Adds a 1px solid border to all sides of the element.</li>
+<li><code>border-2</code>: Adds a 2px solid border.</li>
+<li><code>border-4</code>: Adds a 4px solid border.</li>
+<li><code>border-8</code>: Adds an 8px solid border.</li>
+</ul>
+<h3 id="example-of-applying-border-width"><a class="header" href="#example-of-applying-border-width">Example of Applying Border Width:</a></h3>
+<pre><code class="language-html">&lt;div class="border border-4 border-red-500"&gt;
+  This div has a 4px red border.
+&lt;/div&gt;
+</code></pre>
+<p>In this example, the <code>border-4</code> utility sets a 4px border around the div, and the <code>border-red-500</code> class applies a red color to the border.</p>
+<h3 id="specific-side-borders"><a class="header" href="#specific-side-borders">Specific Side Borders:</a></h3>
+<pre><code class="language-html">&lt;div class="border-t-2 border-b-4 border-blue-500"&gt;
+  This div has a 2px top and 4px bottom blue border.
+&lt;/div&gt;
+</code></pre>
+<p>Here, the <code>border-t-2</code> and <code>border-b-4</code> utilities apply different border widths to the top and bottom of the div, while keeping the color blue.</p>
+<hr />
+<h2 id="3-border-color"><a class="header" href="#3-border-color">3. Border Color</a></h2>
+<p>Tailwind provides utilities to apply a wide range of colors to borders. The <code>border-{color}</code> utility lets you set the border color directly.</p>
+<h3 id="example-of-border-color"><a class="header" href="#example-of-border-color">Example of Border Color:</a></h3>
+<pre><code class="language-html">&lt;div class="border border-blue-600"&gt;
+  This div has a blue border.
+&lt;/div&gt;
+</code></pre>
+<p>In this example, the <code>border-blue-600</code> class gives the div a blue border with a shade level of <code>600</code>. You can easily swap the color to match the design’s color scheme.</p>
+<h3 id="responsive-border-colors"><a class="header" href="#responsive-border-colors">Responsive Border Colors:</a></h3>
+<p>Tailwind allows you to set responsive border colors based on screen size by using the screen size prefixes (<code>sm:</code>, <code>md:</code>, <code>lg:</code>).</p>
+<pre><code class="language-html">&lt;div class="border sm:border-red-500 md:border-green-500 lg:border-purple-500"&gt;
+  This div changes border color based on screen size.
+&lt;/div&gt;
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>On small screens, the border will be red.</li>
+<li>On medium screens, it will change to green.</li>
+<li>On large screens, it will become purple.</li>
+</ul>
+<hr />
+<h2 id="4-border-radius-rounded-corners"><a class="header" href="#4-border-radius-rounded-corners">4. Border Radius (Rounded Corners)</a></h2>
+<p>Tailwind CSS includes utilities for rounding the corners of elements using the <code>rounded</code> class. You can round all corners or target specific corners like the top-left (<code>rounded-tl</code>), top-right (<code>rounded-tr</code>), bottom-left (<code>rounded-bl</code>), and bottom-right (<code>rounded-br</code>) corners.</p>
+<h3 id="common-border-radius-utilities"><a class="header" href="#common-border-radius-utilities">Common Border Radius Utilities:</a></h3>
+<ul>
+<li><code>rounded</code>: Applies a small border-radius (default).</li>
+<li><code>rounded-lg</code>: Applies a larger border-radius.</li>
+<li><code>rounded-full</code>: Fully rounds the element into a circle or oval (useful for avatars or buttons).</li>
+</ul>
+<h3 id="example-of-applying-border-radius"><a class="header" href="#example-of-applying-border-radius">Example of Applying Border Radius:</a></h3>
+<pre><code class="language-html">&lt;div class="border rounded-lg bg-gray-100 p-4"&gt;
+  This div has large rounded corners.
+&lt;/div&gt;
+</code></pre>
+<p>In this example, the <code>rounded-lg</code> class gives the div a larger border radius, softening the corners.</p>
+<h3 id="example-of-fully-rounded-element"><a class="header" href="#example-of-fully-rounded-element">Example of Fully Rounded Element:</a></h3>
+<pre><code class="language-html">&lt;img src="avatar.jpg" class="rounded-full w-32 h-32"&gt;
+</code></pre>
+<p>Here, the <code>rounded-full</code> class makes the image a perfect circle, which is commonly used for profile pictures or avatars.</p>
+<hr />
+<h2 id="5-border-style"><a class="header" href="#5-border-style">5. Border Style</a></h2>
+<p>By default, Tailwind applies a solid border style, but you can change the style using the <code>border-dashed</code>, <code>border-dotted</code>, or <code>border-none</code> classes.</p>
+<h3 id="example-of-different-border-styles"><a class="header" href="#example-of-different-border-styles">Example of Different Border Styles:</a></h3>
+<pre><code class="language-html">&lt;div class="border-4 border-dashed border-green-500 p-4"&gt;
+  This div has a 4px dashed green border.
+&lt;/div&gt;
+</code></pre>
+<p>In this example, the <code>border-dashed</code> class changes the border style to dashed, while maintaining the green color and 4px thickness.</p>
+<hr />
+<h2 id="6-special-border-utilities"><a class="header" href="#6-special-border-utilities">6. Special Border Utilities</a></h2>
+<ul>
+<li>
+<p><strong>No Border</strong>: If you need to remove an existing border, use the <code>border-none</code> class.</p>
+<pre><code class="language-html">&lt;div class="border-none"&gt;
+  This div has no border.
+&lt;/div&gt;
+</code></pre>
+</li>
+<li>
+<p><strong>Custom Border Radius</strong>: You can apply a custom border radius to specific corners for more control.</p>
+<pre><code class="language-html">&lt;div class="rounded-tl-lg rounded-br-lg bg-yellow-100 p-4"&gt;
+  This div has only the top-left and bottom-right corners rounded.
+&lt;/div&gt;
+</code></pre>
+</li>
+</ul>
+<hr />
+<h2 id="7-responsive-borders"><a class="header" href="#7-responsive-borders">7. Responsive Borders</a></h2>
+<p>Tailwind’s border utilities are fully responsive, allowing you to adjust the width, color, or style based on the screen size. This ensures that your design remains flexible and adapts to different devices.</p>
+<h3 id="example-of-responsive-border-radius"><a class="header" href="#example-of-responsive-border-radius">Example of Responsive Border Radius:</a></h3>
+<pre><code class="language-html">&lt;div class="rounded-sm md:rounded-lg lg:rounded-full bg-blue-100 p-6"&gt;
+  This div's border radius changes based on screen size.
+&lt;/div&gt;
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>On small screens, the corners will be slightly rounded.</li>
+<li>On medium screens, the corners will be larger.</li>
+<li>On large screens, the div will have fully rounded corners.</li>
+</ul>
+<hr />
+<h2 id="8-best-practices-for-using-borders"><a class="header" href="#8-best-practices-for-using-borders">8. Best Practices for Using Borders</a></h2>
+<ul>
+<li>
+<p><strong>Subtle Borders for Minimalist Design</strong>: Using thin borders (<code>border</code> or <code>border-2</code>) with light colors creates a clean, minimalist look that enhances modern designs.</p>
+</li>
+<li>
+<p><strong>Use Rounded Corners for Interactive Elements</strong>: Applying border-radius (<code>rounded</code> classes) to buttons or form fields can make them feel more approachable and clickable.</p>
+</li>
+<li>
+<p><strong>Experiment with Border Styles</strong>: While solid borders are standard, experimenting with dashed or dotted borders can add a creative touch to your design. However, use these styles sparingly to avoid clutter.</p>
+</li>
+</ul>
+<hr />
+<h2 id="9-common-pitfalls"><a class="header" href="#9-common-pitfalls">9. Common Pitfalls</a></h2>
+<ul>
+<li>
+<p><strong>Overuse of Thick Borders</strong>: Be cautious when using thick borders like <code>border-8</code> as they can overwhelm your design. Reserve thicker borders for specific sections that require emphasis.</p>
+</li>
+<li>
+<p><strong>Inconsistent Border Radius</strong>: Using inconsistent border-radius values across different components can make your design feel unbalanced. Stick to a consistent style, such as using <code>rounded-lg</code> throughout.</p>
+</li>
+</ul>
+<hr />
+<h2 id="10-conclusion"><a class="header" href="#10-conclusion">10. Conclusion</a></h2>
+<p>Borders are a simple yet powerful tool for enhancing your web design. With Tailwind CSS, managing borders becomes effortless, thanks to the wide range of utilities for controlling border width, color, radius, and style. By mastering these utilities, you can create well-defined, visually appealing layouts that adapt to different screen sizes and devices.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../02_spacing/04_width-and-height.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../02_spacing/06_custom-color.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../02_spacing/04_width-and-height.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../02_spacing/06_custom-color.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

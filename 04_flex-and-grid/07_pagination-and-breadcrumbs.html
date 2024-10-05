@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Pagination and Breadcrumbs - Tailwind</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/index.html"><strong aria-hidden="true">1.</strong> Tailwind Introduction & Styling with Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/01_introduction-to-utility-first-css.html"><strong aria-hidden="true">1.1.</strong> Introduction to Utility-First CSS and the Benefits of Using Tailwind CSS</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/03_how-to-set-up-a-project-with-tailwind-css.html"><strong aria-hidden="true">1.2.</strong> How to Set Up a Project with Tailwind CSS</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/04_font-size.html"><strong aria-hidden="true">1.3.</strong> Font Size</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/05_font-weight.html"><strong aria-hidden="true">1.4.</strong> Font Weight</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/06_text-alignment.html"><strong aria-hidden="true">1.5.</strong> Text Alignment</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/07_text-color-text-opacity-hover-color.html"><strong aria-hidden="true">1.6.</strong> Text Color, Text Opacity & Hover Color</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/08_background-color.html"><strong aria-hidden="true">1.7.</strong> Background Color</a></li><li class="chapter-item expanded "><a href="../01_tailwind-introduction-and-styling-with-layout/09_assignment.html"><strong aria-hidden="true">1.8.</strong> Assignment</a></li></ol></li><li class="chapter-item expanded "><a href="../02_spacing/index.html"><strong aria-hidden="true">2.</strong> Spacing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02_spacing/01_margin-padding.html"><strong aria-hidden="true">2.1.</strong> Margin & Padding</a></li><li class="chapter-item expanded "><a href="../02_spacing/02_text-decoration.html"><strong aria-hidden="true">2.2.</strong> Text Decoration</a></li><li class="chapter-item expanded "><a href="../02_spacing/03_text-transformation.html"><strong aria-hidden="true">2.3.</strong> Text Transformation</a></li><li class="chapter-item expanded "><a href="../02_spacing/04_width-and-height.html"><strong aria-hidden="true">2.4.</strong> Width and Height</a></li><li class="chapter-item expanded "><a href="../02_spacing/05_border.html"><strong aria-hidden="true">2.5.</strong> Border</a></li><li class="chapter-item expanded "><a href="../02_spacing/06_custom-color.html"><strong aria-hidden="true">2.6.</strong> Custom Color</a></li><li class="chapter-item expanded "><a href="../02_spacing/07_custom-margin.html"><strong aria-hidden="true">2.7.</strong> Custom Margin</a></li><li class="chapter-item expanded "><a href="../02_spacing/08_assignment.html"><strong aria-hidden="true">2.8.</strong> Assignment</a></li></ol></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/index.html"><strong aria-hidden="true">3.</strong> Web Design with Tailwind CSS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/01_container-utility.html"><strong aria-hidden="true">3.1.</strong> Container Utility</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/02_box-sizing-utility.html"><strong aria-hidden="true">3.2.</strong> Box-Sizing Utility</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/03_display-utility.html"><strong aria-hidden="true">3.3.</strong> Display Utility</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/04_float-utility.html"><strong aria-hidden="true">3.4.</strong> Float Utility</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/05_object-fit-utility.html"><strong aria-hidden="true">3.5.</strong> Object-Fit Utility</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/06_shadow-and-opacity-utilities.html"><strong aria-hidden="true">3.6.</strong> Shadow and Opacity Utilities</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/07_hover-and-focus-effects.html"><strong aria-hidden="true">3.7.</strong> Hover and Focus Effects</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/08_how-to-use-icon-in-tailwind-css.html"><strong aria-hidden="true">3.8.</strong> How to Use Icons in Tailwind CSS</a></li><li class="chapter-item expanded "><a href="../03_web-design-with-tailwind-css/09_assignment.html"><strong aria-hidden="true">3.9.</strong> Assignment</a></li></ol></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/index.html"><strong aria-hidden="true">4.</strong> Flex & Grid</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04_flex-and-grid/01_cursor-styles-and-pointer-events.html"><strong aria-hidden="true">4.1.</strong> Cursor Styles and Pointer Events</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/02_visibility.html"><strong aria-hidden="true">4.2.</strong> Visibility</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/03_gradient-backgrounds-and-linear-gradients.html"><strong aria-hidden="true">4.3.</strong> Gradient Backgrounds and Linear Gradients</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/04_forms-and-inputs.html"><strong aria-hidden="true">4.4.</strong> Forms and Inputs</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/05_flexbox.html"><strong aria-hidden="true">4.5.</strong> Flexbox</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/06_grid-layouts.html"><strong aria-hidden="true">4.6.</strong> Grid Layouts</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/07_pagination-and-breadcrumbs.html" class="active"><strong aria-hidden="true">4.7.</strong> Pagination and Breadcrumbs</a></li><li class="chapter-item expanded "><a href="../04_flex-and-grid/08_assignment.html"><strong aria-hidden="true">4.8.</strong> Assignment</a></li></ol></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/index.html"><strong aria-hidden="true">5.</strong> Responsive Classes and Modal</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/01_concept-of-components.html"><strong aria-hidden="true">5.1.</strong> Concept of Components</a></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/02_reusable-components-using-apply-and-custom-css-classes.html"><strong aria-hidden="true">5.2.</strong> Reusable Components Using @apply and Custom CSS Classes</a></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/03_breakpoints-and-media-queries.html"><strong aria-hidden="true">5.3.</strong> Breakpoints and Media Queries</a></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/04_responsive-classes-and-utilities.html"><strong aria-hidden="true">5.4.</strong> Responsive Classes and Utilities</a></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/05_mobile-first-design-approach.html"><strong aria-hidden="true">5.5.</strong> Mobile-First Design Approach</a></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/06_modal-components-and-modal-triggers.html"><strong aria-hidden="true">5.6.</strong> Modal Components and Modal Triggers</a></li><li class="chapter-item expanded "><a href="../05_responsive-classes-and-modal/07_assignment.html"><strong aria-hidden="true">5.7.</strong> Assignment</a></li></ol></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/index.html"><strong aria-hidden="true">6.</strong> Configuration, Functions & Directives</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/01_theming-and-dark-mode.html"><strong aria-hidden="true">6.1.</strong> Theming and Dark Mode</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/02_customizing-tailwind-css-configuration.html"><strong aria-hidden="true">6.2.</strong> Customizing Tailwind CSS Configuration</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/03_tailwind-css-plugins.html"><strong aria-hidden="true">6.3.</strong> Tailwind CSS Plugins</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/04_popular-tailwind-css-plugins.html"><strong aria-hidden="true">6.4.</strong> Popular Tailwind CSS Plugins</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/05_functions-directives.html"><strong aria-hidden="true">6.5.</strong> Functions & Directives</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/06_integration-framework.html"><strong aria-hidden="true">6.6.</strong> Integrating Tailwind CSS with Component Frameworks</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/07_optimizing-production.html"><strong aria-hidden="true">6.7.</strong> Optimizing Tailwind CSS for Production</a></li><li class="chapter-item expanded "><a href="../06_configuration-functions-and-directives/08_assignment.html"><strong aria-hidden="true">6.8.</strong> Assignment</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Tailwind</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="pagination-and-breadcrumbs-in-tailwind-css"><a class="header" href="#pagination-and-breadcrumbs-in-tailwind-css">Pagination and Breadcrumbs in Tailwind CSS</a></h1>
+<p>Navigating large data sets or complex websites efficiently is essential for creating a good user experience. <strong>Pagination</strong> and <strong>breadcrumbs</strong> are two common UI components that help users navigate through data and content hierarchies. Tailwind CSS provides utility classes that make it easy to style these components in a clean and modern way. In this chapter, we’ll explore how to create and style both pagination and breadcrumbs using Tailwind's utility classes.</p>
+<hr />
+<h2 id="1-pagination"><a class="header" href="#1-pagination">1. Pagination</a></h2>
+<p>Pagination allows users to navigate through different pages of content, typically used when dealing with large data sets or lists that are broken up into smaller, manageable chunks. It’s a familiar navigation tool that ensures content loads efficiently, improving the performance of your application.</p>
+<h3 id="basic-structure-of-pagination"><a class="header" href="#basic-structure-of-pagination">Basic Structure of Pagination</a></h3>
+<p>Pagination usually consists of links to move to the previous or next page, as well as links for individual page numbers. Tailwind CSS offers many utilities that can be used to style pagination links, such as padding, margins, background colors, and hover states.</p>
+<h3 id="example-pagination-with-tailwind-css"><a class="header" href="#example-pagination-with-tailwind-css">Example: Pagination with Tailwind CSS</a></h3>
+<pre><code class="language-html">&lt;nav class="mt-4 flex items-center justify-center"&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500"&gt;Previous&lt;/a&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-blue-500 px-4 py-2 text-white"&gt;1&lt;/a&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500"&gt;2&lt;/a&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500"&gt;3&lt;/a&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500"&gt;Next&lt;/a&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>The parent <code>&lt;nav&gt;</code> element uses <code>flex</code> and <code>justify-center</code> to center the pagination links horizontally on the page.</li>
+<li>Each link is styled with <strong>margin-x (<code>mx-1</code>)</strong> for spacing between the links, and <strong>rounded-md</strong> to give the links rounded corners.</li>
+<li>The <strong>bg-white</strong> and <strong>bg-blue-500</strong> classes control the background colors for the non-active and active pagination links, respectively.</li>
+<li><strong>px-4 py-2</strong> defines padding for the links, and <strong>text-blue-500</strong> or <strong>text-white</strong> controls the text color.</li>
+</ul>
+<h3 id="key-tailwind-classes-for-pagination"><a class="header" href="#key-tailwind-classes-for-pagination">Key Tailwind Classes for Pagination:</a></h3>
+<ul>
+<li><strong>mx-{n}</strong>: Adds horizontal spacing between pagination links.</li>
+<li><strong>px-{n} py-{n}</strong>: Adds padding inside the pagination links for clickable areas.</li>
+<li><strong>bg-{color}</strong>: Sets background color for the pagination links.</li>
+<li><strong>text-{color}</strong>: Defines the text color inside the pagination links.</li>
+<li><strong>hover:bg-{color} hover:text-{color}</strong>: Applies hover effects for better interactivity.</li>
+</ul>
+<hr />
+<h2 id="2-pagination-with-icons"><a class="header" href="#2-pagination-with-icons">2. Pagination with Icons</a></h2>
+<p>Pagination links often include arrows or other icons to indicate "Previous" or "Next" pages. With Tailwind CSS, you can easily integrate icons using libraries like FontAwesome or Heroicons to enhance the appearance of your pagination.</p>
+<h3 id="example-pagination-with-icons"><a class="header" href="#example-pagination-with-icons">Example: Pagination with Icons</a></h3>
+<pre><code class="language-html">&lt;nav class="mt-4 flex items-center justify-center"&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500"&gt;
+    &lt;svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;
+      &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /&gt;
+    &lt;/svg&gt;
+    Previous
+  &lt;/a&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-blue-500 px-4 py-2 text-white"&gt;1&lt;/a&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500"&gt;2&lt;/a&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500"&gt;Next
+    &lt;svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;
+      &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>SVG icons are used to represent the previous and next arrows.</li>
+<li>The SVGs are placed inside the <code>&lt;a&gt;</code> tags using the <strong>inline</strong> utility, ensuring they appear alongside the text.</li>
+<li>The arrows provide a clear, intuitive navigation cue to the user.</li>
+</ul>
+<hr />
+<h2 id="3-breadcrumbs"><a class="header" href="#3-breadcrumbs">3. Breadcrumbs</a></h2>
+<p><strong>Breadcrumbs</strong> are a secondary navigation system that helps users understand their current location within a website's structure. They typically display a path to the current page, allowing users to navigate backward through the site's hierarchy.</p>
+<h3 id="example-breadcrumb-navigation-with-tailwind-css"><a class="header" href="#example-breadcrumb-navigation-with-tailwind-css">Example: Breadcrumb Navigation with Tailwind CSS</a></h3>
+<pre><code class="language-html">&lt;nav class="flex items-center text-gray-500"&gt;
+  &lt;a href="#" class="hover:text-gray-700"&gt;Home&lt;/a&gt;
+  &lt;span class="mx-2"&gt;/&lt;/span&gt;
+  &lt;a href="#" class="hover:text-gray-700"&gt;Category&lt;/a&gt;
+  &lt;span class="mx-2"&gt;/&lt;/span&gt;
+  &lt;a href="#" class="hover:text-gray-700"&gt;Subcategory&lt;/a&gt;
+  &lt;span class="mx-2"&gt;/&lt;/span&gt;
+  &lt;span class="text-gray-700"&gt;Current Page&lt;/span&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>The breadcrumb is structured using a series of <code>&lt;a&gt;</code> links and separators (<code>/</code>) between them.</li>
+<li>The <strong>flex</strong> class ensures the breadcrumbs are arranged horizontally.</li>
+<li><strong>text-gray-500</strong> is used for the default breadcrumb color, while <strong>hover:text-gray-700</strong> is applied to change the text color on hover.</li>
+<li>The <strong>mx-2</strong> class is used to add horizontal margin between the breadcrumb links and separators.</li>
+</ul>
+<h3 id="key-tailwind-classes-for-breadcrumbs"><a class="header" href="#key-tailwind-classes-for-breadcrumbs">Key Tailwind Classes for Breadcrumbs:</a></h3>
+<ul>
+<li><strong>text-gray-{value}</strong>: Defines the color of the breadcrumb text.</li>
+<li><strong>hover:text-gray-{value}</strong>: Changes the color of the breadcrumb link text when hovered.</li>
+<li><strong>mx-{n}</strong>: Adds space between breadcrumb links and separators for a clear, readable layout.</li>
+</ul>
+<hr />
+<h2 id="4-responsive-breadcrumbs-and-pagination"><a class="header" href="#4-responsive-breadcrumbs-and-pagination">4. Responsive Breadcrumbs and Pagination</a></h2>
+<p>Pagination and breadcrumbs should be responsive to ensure a seamless user experience across devices. Tailwind CSS’s responsive utilities allow you to adapt these components for different screen sizes.</p>
+<h3 id="example-responsive-breadcrumbs"><a class="header" href="#example-responsive-breadcrumbs">Example: Responsive Breadcrumbs</a></h3>
+<pre><code class="language-html">&lt;nav class="flex items-center text-gray-500"&gt;
+  &lt;a href="#" class="hover:text-gray-700"&gt;Home&lt;/a&gt;
+  &lt;span class="mx-2"&gt;/&lt;/span&gt;
+  &lt;a href="#" class="hover:text-gray-700 hidden md:inline"&gt;Category&lt;/a&gt;
+  &lt;span class="mx-2 hidden md:inline"&gt;/&lt;/span&gt;
+  &lt;a href="#" class="hover:text-gray-700"&gt;Subcategory&lt;/a&gt;
+  &lt;span class="mx-2"&gt;/&lt;/span&gt;
+  &lt;span class="text-gray-700"&gt;Current Page&lt;/span&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>The <code>hidden md:inline</code> class is used to hide the "Category" link and its separator on small screens, making the breadcrumbs more concise on mobile devices.</li>
+</ul>
+<p>Similarly, pagination can be adapted to different screen sizes by adjusting the size of the links or reducing the number of visible page numbers.</p>
+<h3 id="example-responsive-pagination"><a class="header" href="#example-responsive-pagination">Example: Responsive Pagination</a></h3>
+<pre><code class="language-html">&lt;nav class="mt-4 flex items-center justify-center"&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500"&gt;Previous&lt;/a&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-blue-500 px-4 py-2 text-white hidden md:inline"&gt;1&lt;/a&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500 hidden md:inline"&gt;2&lt;/a&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500 hidden md:inline"&gt;3&lt;/a&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500"&gt;Next&lt;/a&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>On small screens, the page numbers (<code>1</code>, <code>2</code>, <code>3</code>) are hidden using <code>hidden md:inline</code>, showing only the "Previous" and "Next" buttons. On larger screens, the full pagination is displayed.</li>
+</ul>
+<hr />
+<h2 id="5-accessibility-considerations"><a class="header" href="#5-accessibility-considerations">5. Accessibility Considerations</a></h2>
+<p>When creating pagination and breadcrumb components, it’s essential to ensure they are accessible to all users, including those using screen readers or other assistive technologies.</p>
+<ul>
+<li><strong>ARIA Roles</strong>: Use proper ARIA roles like <code>aria-current</code> to indicate the current page in pagination.</li>
+<li><strong>Focus States</strong>: Make sure that pagination links and breadcrumbs have clear focus states, especially for keyboard navigation.</li>
+</ul>
+<h3 id="example-adding-accessibility-with-aria-roles"><a class="header" href="#example-adding-accessibility-with-aria-roles">Example: Adding Accessibility with ARIA Roles</a></h3>
+<pre><code class="language-html">&lt;nav class="mt-4 flex items-center justify-center" aria-label="Pagination"&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500"&gt;Previous&lt;/a&gt;
+  &lt;a href="#" aria-current="page" class="mx-1 rounded-md bg-blue-500 px-4 py-2 text-white"&gt;1&lt;/a&gt;
+  &lt;
+
+a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500"&gt;2&lt;/a&gt;
+  &lt;a href="#" class="mx-1 rounded-md bg-white px-4 py-2 text-blue-500"&gt;Next&lt;/a&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>The <code>aria-current="page"</code> attribute is used to indicate the active page for screen readers.</li>
+</ul>
+<hr />
+<h2 id="6-best-practices-for-pagination-and-breadcrumbs"><a class="header" href="#6-best-practices-for-pagination-and-breadcrumbs">6. Best Practices for Pagination and Breadcrumbs</a></h2>
+<ul>
+<li>
+<p><strong>Keep Pagination Simple</strong>: For most cases, showing a few pages at a time with "Previous" and "Next" links is sufficient. Don’t overload the user with too many links.</p>
+</li>
+<li>
+<p><strong>Breadcrumbs Should Reflect Site Structure</strong>: Breadcrumbs should represent the actual navigation hierarchy of your site. They are helpful for SEO and provide a visual indication of the user’s location.</p>
+</li>
+<li>
+<p><strong>Ensure Accessibility</strong>: Use proper ARIA attributes, and ensure links are keyboard-navigable. Make sure pagination and breadcrumb links are readable and have adequate contrast.</p>
+</li>
+</ul>
+<hr />
+<h2 id="7-common-pitfalls"><a class="header" href="#7-common-pitfalls">7. Common Pitfalls</a></h2>
+<ul>
+<li>
+<p><strong>Ignoring Responsiveness</strong>: Breadcrumbs and pagination that don’t scale well on small screens can lead to poor user experience. Always test these components on multiple devices.</p>
+</li>
+<li>
+<p><strong>Overcomplicating Pagination</strong>: Providing too many page numbers can overwhelm users. Keep it simple by limiting the visible page numbers.</p>
+</li>
+</ul>
+<hr />
+<h2 id="8-conclusion"><a class="header" href="#8-conclusion">8. Conclusion</a></h2>
+<p>Pagination and breadcrumbs are essential components of user-friendly navigation. Tailwind CSS simplifies the process of creating clean, responsive pagination and breadcrumb elements using its utility classes. By mastering these components, you can enhance the user experience and make navigation more intuitive, especially when dealing with large datasets or complex site structures.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../04_flex-and-grid/06_grid-layouts.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../04_flex-and-grid/08_assignment.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../04_flex-and-grid/06_grid-layouts.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../04_flex-and-grid/08_assignment.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
