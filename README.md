@@ -1,6 +1,8 @@
-# Tailwind
+<img src="https://cdn.worldvectorlogo.com/logos/tailwind-css-1.svg" alt="logo" style="width: 35%; height: auto;">
 
-This repository contains a comprehensive `mdbook` that covers various aspects of Tailwind CSS, including theory and practical projects. The book is designed to help you master Tailwind's utility-first approach for building modern web applications.
+---
+
+This repository contains a comprehensive [**mdBook**](https://onurcatik.github.io/Tailwind/) that covers various aspects of Tailwind CSS, including theory and practical projects. The book is designed to help you master Tailwind's utility-first approach for building modern web applications.
 
 ## Table of Contents
 
@@ -57,5 +59,4 @@ This will host the book locally, allowing you to view it in a browser at `http:/
 ## Contributing
 
 Feel free to fork the repository and submit pull requests to improve the content or add new chapters.
-
 
