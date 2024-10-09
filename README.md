@@ -58,6 +58,4 @@ This will host the book locally, allowing you to view it in a browser at `http:/
 
 Feel free to fork the repository and submit pull requests to improve the content or add new chapters.
 
-## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
