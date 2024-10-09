@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Info</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        // Sayfa yüklenirken temayı kontrol eden ve ayarlayan JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark:bg-gray-800');
+            } else {
+                document.body.classList.add('bg-gray-100');
+            }
+        });
+    </script>
+</head>
+<body class="transition-colors duration-500 text-gray-900 dark:text-gray-100">
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-8">
+            <h1 id="header" class="text-3xl font-bold text-black dark:text-vlxk transition-colors duration-500">Pokemon Info</h1>
+            <!-- Dark Mode Toggle Button -->
+            <button id="theme-toggle" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+                Toggle Dark Mode
+            </button>
+        </div>
+        <!-- Pokemon Kartları -->
+        <div id="pokemon-cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Pokemon Kartları Dinamik Olarak Eklenecek -->
+        </div>
+
+        <!-- Gezinme Butonları -->
+        <div class="flex justify-center mt-8 space-x-4">
+            <button id="prev-btn" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
+                Previous
+            </button>
+            <button id="next-btn" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const apiUrl = 'https://pokeapi.co/api/v2/pokemon';
+        let offset = 0;
+        const limit = 8;
+
+        // Pokemonları API'den Çeken Fonksiyon
+        async function fetchPokemons() {
+            const response = await fetch(`${apiUrl}?limit=${limit}&offset=${offset}`);
+            const data = await response.json();
+            const pokemonCards = document.getElementById('pokemon-cards');
+            pokemonCards.innerHTML = ''; // Önceki içerikleri temizle
+
+            for (let pokemon of data.results) {
+                const pokemonData = await fetch(pokemon.url).then(res => res.json());
+                const { name, height, weight, abilities, sprites } = pokemonData;
+
+                // Kart HTML'i
+                const abilitiesList = abilities.map(ability => ability.ability.name).join(', ');
+
+                const card = `
+                    <div class="card bg-white dark:bg-gray-900 text-black dark:text-white rounded-lg shadow-md p-4 transition-colors duration-500">
+                        <img class="w-24 h-24 mx-auto" src="${sprites.front_default}" alt="${name}">
+                        <h2 class="text-center text-xl font-bold capitalize mt-4">${name}</h2>
+                        <p class="text-center">Height: ${height}</p>
+                        <p class="text-center">Weight: ${weight}</p>
+                        <p class="text-center">Abilities: ${abilitiesList}</p>
+                    </div>
+                `;
+                pokemonCards.innerHTML += card;
+            }
+
+            // "Previous" butonunu kontrol et
+            const prevButton = document.getElementById('prev-btn');
+            prevButton.disabled = offset === 0;
+        }
+
+        // İlk Yükleme
+        fetchPokemons();
+
+        // Next Butonuna Tıklayınca Sonraki Pokemonları Yükleme
+        document.getElementById('next-btn').addEventListener('click', () => {
+            offset += limit;
+            fetchPokemons();
+        });
+
+        // Previous Butonuna Tıklayınca Önceki Pokemonları Yükleme
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            if (offset > 0) {
+                offset -= limit;
+                fetchPokemons();
+            }
+        });
+
+        // Dark Mode Toggle İşlevi
+        const themeToggleBtn = document.getElementById('theme-toggle');
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+
+            // Temanın değişmesine bağlı olarak arka plan ve metin renklerini güncelle
+            const cards = document.querySelectorAll('.card');
+            const header = document.getElementById('header');
+
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                document.body.classList.remove('bg-gray-100');
+                document.body.classList.add('dark:bg-gray-800');
+                cards.forEach(card => {
+                    card.classList.remove('bg-white', 'text-black');
+                    card.classList.add('dark:bg-gray-900', 'dark:text-white');
+                });
+                // h1 metnini beyaz yap
+                header.classList.remove('text-black');
+                header.classList.add('text-white');
+            } else {
+                localStorage.setItem('theme', 'light');
+                document.body.classList.remove('dark:bg-gray-800');
+                document.body.classList.add('bg-gray-100');
+                cards.forEach(card => {
+                    card.classList.remove('dark:bg-gray-900', 'dark:text-white');
+                    card.classList.add('bg-white', 'text-black');
+                });
+                // h1 metnini siyah yap
+                header.classList.remove('text-white');
+                header.classList.add('text-black');
+            }
+        });
+    </script>
+
+</body>
+</html>

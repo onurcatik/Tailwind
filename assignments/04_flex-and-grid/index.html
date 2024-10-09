@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+
+    <!-- Navbar Section -->
+
+    <nav class="bg-blue-400 flex justify-between items-center p-4">
+        <div class="text-white text-xl font-bold">Logo</div>
+        <ul class="flex space-x-4">
+            <li class="cursor-pointer hover:text-yellow-400 text-white">Home</li>
+            <li class="cursor-pointer hover:text-yellow-400 text-white">About</li>
+            <li class="cursor-pointer hover:text-yellow-400 text-white">Service</li>
+            <li class="cursor-pointer hover:text-yellow-400 text-white">Contact</li>
+
+        </ul>
+        </nav>
+
+         <!-- Hero Section -->
+          <section class="bg-gradient-to-r from-yellow-500 to-green-400 h-screen  flex items-center justify-center">
+             <div class="text-center font-bold">
+               <h1 class="text-6xl font-bold">Welcome to Our Website</h1>
+               <p class="text-3xl mt-8">
+                We provide awesome services
+               </p>
+               <button class="mt-6 px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-white font-bold hover:scale-75 transition-transform rounded-lg">
+                Get Started
+               </button>
+             </div>
+          </section>
+
+      
+
+    <!-- Services Section -->
+    <section class="p-8 bg-white">
+        <div class="text-center mb-8">
+            <h2 class="text-4xl font-bold">Our Services</h2>
+            <p class="text-gray-600">We offer a variety of services to help you achieve your goals.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="border shadow p-6 hover:shadow-lg">
+                <h3 class="text-2xl font-bold mb-4">Service 1</h3>
+                <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="border shadow p-6 hover:shadow-lg">
+                <h3 class="text-2xl font-bold mb-4">Service 2</h3>
+                <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="border shadow p-6 hover:shadow-lg">
+                <h3 class="text-2xl font-bold mb-4">Service 3</h3>
+                <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="p-36 bg-gray-100 flex flex-col items-center min-h-screen">
+        <h1 class="text-4xl font-bold mb-6">Contact Us</h1>
+        <form class="w-full md:w-1/2 space-y-4">
+            <input type="text" placeholder="Name" class="border rounded p-4 w-full focus:outline-none">
+            <input type="email" placeholder="Email" class="border rounded p-4 w-full focus:outline-none">
+            <textarea placeholder="Message" class="border rounded p-4 w-full focus:outline-none"></textarea>
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold p-4 rounded w-full">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white p-8 grid grid-cols-1 md:grid-cols-3">
+        <div>
+            <h3 class="text-xl font-bold mb-4">About Us</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed.</p>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+            <p>Email: info@example.com</p>
+            <p>Phone: +1234567890</p>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-blue-500 hover:scale-110 cursor-pointer">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="#" class="hover:text-blue-500 hover:scale-110 cursor-pointer">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="#" class="hover:text-blue-500 hover:scale-110 cursor-pointer">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
