@@ -9,13 +9,13 @@
 - [x]  [Web Design](./web-design)  
   Explore web design principles using Tailwind.
 
-- [ ]  [Flex and Grid](./flex-and-grid)  
+- [x]  [Flex and Grid](./flex-and-grid)  
   Master Flexbox and Grid systems.
 
-- [ ]  [Responsive Classes](./responsive-classes)  
+- [x]  [Responsive Classes](./responsive-classes)  
   Implement responsive design with Tailwind's utility classes.
 
-- [ ]  [Configuration](./configuration)  
+- [x]  [Configuration](./configuration)  
   Customize Tailwind configuration for projects.
 
 - [ ]  [Portfolio Website](./tailwind-project-portfolio-website)  
