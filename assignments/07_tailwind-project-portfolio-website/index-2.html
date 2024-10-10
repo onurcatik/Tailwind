@@ -18,10 +18,10 @@
             <nav class="bg-red-500 flex justify-between items-center p-6">
                 <div class="text-white text-xl font-bold">Logo</div>
                 <ul class="hidden md:flex space-x-4">
-                    <li class="cursor-pointer hover:text-yellow-400 text-white">Home</li>
-                    <li class="cursor-pointer hover:text-yellow-400 text-white">About</li>
-                    <li class="cursor-pointer hover:text-yellow-400 text-white">Service</li>
-                    <li class="cursor-pointer hover:text-yellow-400 text-white">Contact</li>
+                    <li class="cursor-pointer hover:text-yellow-400 text-white font-bold text-lg">Home</li>
+                    <li class="cursor-pointer hover:text-yellow-400 text-white font-bold text-lg">About</li>
+                    <li class="cursor-pointer hover:text-yellow-400 text-white font-bold text-lg">Service</li>
+                    <li class="cursor-pointer hover:text-yellow-400 text-white font-bold text-lg">Contact</li>
                 </ul>
                 <div class="md:hidden">
                     <button id="menu-toggle" class="text-white focus:outline-none">
@@ -38,35 +38,66 @@
                 </ul>
             </div>
         </header>
-    <!-- Hero Section -->
-    <section class="container mx-auto flex flex-col md:flex-row items-center justify-between py-16 px-8">
-        <div class="order-2 md:order-1 mt-8 md:mt-0 ml-8">
-            <h2 class="text-5xl font-bold text-black">Hi</h2>
-            <h2 class="text-5xl font-bold text-black">I'm <span class="text-red-500">Onur</span></h2>
-            <h3 class="text-5xl font-bold text-red-500 mt-4">Web Developer</h3>
-            <p class="text-gray-600 mt-4 text-lg max-w-md">
-                My journey in web development began with a fascination for coding and a desire to bring ideas to life on the digital canvas.
-            </p>
-            <button class="bg-red-500 text-white px-6 py-2 rounded mt-6 hover:bg-red-600">Contact</button>
+
+        <header class="bg-gray-300 text-black py-12 text-center rounded-lg">
+            <div class="container mx-auto">
+                <h1 class="text-8xl font-bold mb-4">Hi, I'm <span class="text-red-500">Onur</span></h1>
+                <h3 class="text-4xl font-bold text-red-500 mt-4">Web Developer</h3>
+            </div>
+        </header>
+ 
+   <!-- Hero Section -->
+   <section class="relative bg-white py-16 text-center">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto mb-8 relative">
+            
+            <!-- Black Circle Top Right -->
+            <div class="bg-black w-8 h-8 rounded-full absolute top-[5%] left-[90%] md:top-[50px] md:left-[80%] lg:top-[50px] lg:left-[85%]"></div>
+
+            <!-- Red Circle Bottom Left -->
+            <div class="bg-red-500 w-5 h-5 rounded-full absolute bottom-[10%] right-[85%] md:bottom-[100px] md:right-[70%] lg:bottom-[30%] lg:right-[80%]"></div>
+
+            <!-- Placeholder Image -->
+            <img src="https://via.placeholder.com/300" alt="Placeholder Image" 
+                 class="rounded-full w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 mx-auto">
         </div>
-        <div class="w-full md:w-1/3 order-1 md:order-2 mx-auto md:mx-0 md:mr-28">
-            <img class="rounded-full w-full max-w-xs md:max-w-md lg:max-w-lg" src="https://via.placeholder.com/400x400" alt="Photo">
+        
+        <!-- Description Text -->
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto text-gray-800">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum temporibus corporis fugiat. Ducimus dignissimos assumenda ipsa excepturi ullam repellendus sequi.
+        </p>
+
+        <!-- Contact Me Button -->
+        <button class="relative mt-6 bg-red-500 px-6 py-2 sm:px-8 sm:py-3 rounded-lg text-white font-semibold hover:bg-red-600 transition duration-300 ease-in-out hover:text-yellow-400">
+            Contact Me
+        </button>
+
+        <!-- Options Buttons -->
+        <div class="flex flex-wrap justify-center space-x-2 sm:space-x-4 mt-8">
+            <button class="border border-gray-500 py-2 px-4 sm:px-6 rounded-full font-semibold hover:text-yellow-400 transition duration-300 ease-in-out">
+                Option 1
+            </button>
+            <button class="border border-gray-500 py-2 px-4 sm:px-6 rounded-full font-semibold hover:text-yellow-400 transition duration-300 ease-in-out">
+                Option 2
+            </button>
+            <button class="border border-gray-500 py-2 px-4 sm:px-6 rounded-full font-semibold hover:text-yellow-400 transition duration-300 ease-in-out">
+                Option 3
+            </button>
         </div>
-        
-        
-        
-    </section>
-    
+    </div>
+</section>
+
+
     
 
     <!-- About Me Section -->
     <section class="container mx-auto py-16 px-6">
         <h2 class="text-center text-4xl font-bold text-gray-800 mb-6">About Me</h2>
         <p class="text-center text-gray-600 text-lg mb-6 max-w-3xl mx-auto">
-            My journey in web development began with a fascination for coding and a desire to bring ideas to life on the digital canvas.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam soluta corrupti a magni adipisci hic?
         </p>
         <p class="text-center text-gray-600 text-lg mb-12 max-w-4xl mx-auto">
-            Over the years, I have acquired a strong command of programming languages such as HTML, CSS, and JavaScript, allowing me to create engaging and dynamic user interfaces. Beyond technical skills, I am a strong collaborator and believe in effective communication and teamwork. I thrive in a collaborative environment where ideas are shared, and collective efforts lead to outstanding outcomes.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dignissimos suscipit fugiat nesciunt, non debitis, provident sapiente nemo sit laborum aperiam nihil commodi, et odio facilis temporibus mollitia id quos porro cum dolore voluptatibus cupiditate quod quasi! Perferendis quae voluptates hic qui magnam, cum eos debitis est necessitatibus tempora esse.
         </p>
 
         <!-- Skills Section -->
@@ -80,9 +111,9 @@
                 </div>
                 <h3 class="text-lg font-semibold text-gray-800">Web Design</h3>
                 <p class="text-gray-600 mt-2 mb-4">
-                    Creating visually captivating and user-friendly websites through creative and strategic design principles.
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit dignissimos error neque explicabo deserunt? Laudantium minus odio itaque sint iusto rem blanditiis dolores animi, quidem, possimus dolorum, quaerat eum ut.
                 </p>
-                <a href="#" class="text-red-500 hover:text-red-600 font-semibold">Learn More →</a>
+                <a href="#" class="text-red-500 font-semibold hover:text-yellow-400">Learn More →</a>
             </div>
 
             <!-- Web Development Card -->
@@ -94,9 +125,9 @@
                 </div>
                 <h3 class="text-lg font-semibold text-gray-800">Web Development</h3>
                 <p class="text-gray-600 mt-2 mb-4">
-                    Building interactive and functional websites using programming languages and web technologies.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat molestias incidunt soluta fuga voluptate at adipisci obcaecati sapiente accusantium vel.
                 </p>
-                <a href="#" class="text-red-500 hover:text-red-600 font-semibold">Learn More →</a>
+                <a href="#" class="text-red-500 hover:text-yellow-400 font-semibold">Learn More →</a>
             </div>
 
             <!-- SEO Card -->
@@ -108,9 +139,9 @@
                 </div>
                 <h3 class="text-lg font-semibold text-gray-800">SEO</h3>
                 <p class="text-gray-600 mt-2 mb-4">
-                    Optimizing websites to improve visibility, attract organic traffic, and enhance search engine rankings.
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, molestias amet quas a modi magni voluptate officiis eligendi! Ut, doloribus.
                 </p>
-                <a href="#" class="text-red-500 hover:text-red-600 font-semibold">Learn More →</a>
+                <a href="#" class="text-red-500 hover:text-yellow-400 font-semibold">Learn More →</a>
             </div>
         </div>
 
@@ -187,9 +218,9 @@
                 <div class="p-6">
                     <h3 class="text-lg font-semibold text-gray-800 mb-2">Mastering Responsive Web Design</h3>
                     <p class="text-gray-600 mb-4">
-                        In this blog, we unravel the secrets of responsive web design, a vital skill for modern web developers. Explore the principles, techniques, and best practices for creating websites that seamlessly adapt to various screen sizes.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque laboriosam aliquam perspiciatis tempore libero ducimus culpa non ad cupiditate asperiores nemo assumenda error eligendi, eveniet ullam magnam nisi minus nihil.
                     </p>
-                    <a href="#" class="text-red-500 hover:text-red-600 font-semibold">Learn More →</a>
+                    <a href="#" class="text-red-500 hover:text-yellow-400 font-semibold">Learn More →</a>
                 </div>
             </div>
 
@@ -199,9 +230,9 @@
                 <div class="p-6">
                     <h3 class="text-lg font-semibold text-gray-800 mb-2">The Power of Accessibility in Web Development</h3>
                     <p class="text-gray-600 mb-4">
-                        Join us on a journey to understand the importance of web accessibility and inclusive design. This blog explores the impact of accessible web development on individuals with disabilities and the broader user base.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quisquam asperiores, veniam excepturi alias ipsa magnam ex impedit pariatur possimus porro rem quibusdam cum reiciendis, exercitationem temporibus nostrum nisi ab.
                     </p>
-                    <a href="#" class="text-red-500 hover:text-red-600 font-semibold">Learn More →</a>
+                    <a href="#" class="text-red-500 hover:text-yellow-400 font-semibold">Learn More →</a>
                 </div>
             </div>
 
@@ -211,48 +242,48 @@
                 <div class="p-6">
                     <h3 class="text-lg font-semibold text-gray-800 mb-2">Supercharging Web Performance</h3>
                     <p class="text-gray-600 mb-4">
-                        Uncover the secrets to supercharging web performance and delivering lightning-fast websites. In this blog, we explore techniques and tools for optimizing website speed, performance, performance testing, browser rendering.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium placeat nulla quas, eos unde earum repellat cum error modi eligendi facilis ea debitis, adipisci dolor itaque ipsam mollitia velit sed?
                     </p>
-                    <a href="#" class="text-red-500 hover:text-red-600 font-semibold">Learn More →</a>
+                    <a href="#" class="text-red-500 hover:text-yellow-400 font-semibold">Learn More →</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="container mx-auto py-16 px-6"> </section>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Google Map -->
-            <div class="w-full">
-                <!-- You can replace this iframe src with your own map link -->
-                <iframe class="w-full h-96 rounded-lg  pl-3 pr-3"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97895.52405794666!2d32.78463959804895!3d39.920787655820!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34f8ec0b5aa81%3A0x75384fd24c45320!2sAnkara%2C%20Turkey!5e0!3m2!1sen!2str!4v1696400264998!5m2!1sen!2str"
-        allowfullscreen="" loading="lazy"></iframe>
 
-            </div>
-        
-            <!-- Contact Form -->
-            <div class="w-full bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Get in touch</h3>
-                <p class="text-gray-600 mb-6">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, alias!
-                </p>
-                <form action="#" method="POST">
-                    <div class="mb-4">
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                        <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-lg focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm">
-                    </div>
-                    <div class="mb-4">
-                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-lg focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600">
-                        Submit
-                    </button>
-                </form>
-            </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pl-0 pr-0 shadow-md">
+        <!-- Google Map -->
+        <div class="w-full">
+            <!-- You can replace this iframe src with your own map link -->
+            <iframe class="w-full h-96 rounded-lg pl-3 pr-3 pb-1 "
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97895.52405794666!2d32.78463959804895!3d39.920787655820!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34f8ec0b5aa81%3A0x75384fd24c45320!2sAnkara%2C%20Turkey!5e0!3m2!1sen!2str!4v1696400264998!5m2!1sen!2str"
+                allowfullscreen="" loading="lazy"></iframe>
         </div>
-    </section><!-- Contact Section -->
+    
+        <!-- Contact Form -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-6 pb-1">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-1">Get in touch</h3>
+            <p class="text-gray-600 mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque esse sequi incidunt quis, sed quod?
+            </p>
+            <form action="#" method="POST">
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 rounded-md shadow-lg focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                    <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 rounded-md shadow-lg focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600 hover:text-yellow-400">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+    </section>
+    
     
 
     <!-- Footer -->
